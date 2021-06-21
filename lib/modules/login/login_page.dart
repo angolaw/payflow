@@ -31,7 +31,16 @@ class LoginPage extends StatelessWidget {
               left: 84,
               right: 84,
               child: Image.asset(AppImages.logomini)),
-          Text("Organize seus boletos em um só lugar", style: TextStyles.,)
+          Positioned(
+            top: 550,
+            right: 69,
+            left: 69,
+            child: Text(
+              "Organize seus boletos em um só lugar",
+              style: TextStyles.titleHome,
+              textAlign: TextAlign.center,
+            ),
+          )
         ],
       ),
     );
