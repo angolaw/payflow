@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/pages/splash.dart';
+import 'package:payflow/modules/splash/splash.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AppWidget());
 }
 
-class MyApp extends StatelessWidget {
+class AppWidget extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'PayFlow',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: AppColors.primary,
       ),
       home: Splash(),
     );
