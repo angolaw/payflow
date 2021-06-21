@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'appcolors.dart';
+import 'app_colors.dart';
 
 class TextStyles {
   static final titleHome = GoogleFonts.lexendDeca(
