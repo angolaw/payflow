@@ -1,7 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
+
+import '../sign_in_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -40,7 +44,8 @@ class LoginPage extends StatelessWidget {
               style: TextStyles.titleHome,
               textAlign: TextAlign.center,
             ),
-          )
+          ),
+          Positioned(bottom: 64, left: 60, right: 40, child: SignInButton())
         ],
       ),
     );
