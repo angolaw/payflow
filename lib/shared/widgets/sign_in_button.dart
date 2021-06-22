@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
+import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class SignInButton extends StatelessWidget {
-  const SignInButton({Key? key}) : super(key: key);
+  final VoidCallback onTap;
+  const SignInButton({Key? key, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Center(
         child: Row(
           children: [GoogleIconContainer(), Divider(), ButtonLabel()],
@@ -61,7 +63,11 @@ class ButtonLabel extends StatelessWidget {
           border: Border.all(color: AppColors.stroke, width: 1),
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(5), bottomRight: Radius.circular(5))),
-      child: Center(child: Text("Entrar com o Google")),
+      child: Center(
+          child: Text(
+        "Entrar com o Google",
+        style: TextStyles.buttonGray,
+      )),
     );
   }
 }
