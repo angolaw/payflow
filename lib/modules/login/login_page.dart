@@ -7,46 +7,57 @@ import 'package:payflow/shared/themes/app_text_styles.dart';
 
 import '../sign_in_button.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              Container(
-                height: height * 0.4,
-                decoration: BoxDecoration(color: AppColors.primary),
-              ),
-            ],
-          ),
-          Positioned(
-              top: 37,
-              left: 84,
-              right: 84,
-              child: Image.asset(AppImages.person)),
-          Positioned(
-              top: 425,
-              left: 84,
-              right: 84,
-              child: Image.asset(AppImages.logomini)),
-          Positioned(
-            top: 550,
-            right: 69,
-            left: 69,
-            child: Text(
-              "Organize seus boletos em um só lugar",
-              style: TextStyles.titleHome,
-              textAlign: TextAlign.center,
+      body: Container(
+        height: size.height,
+        width: size.width,
+        child: Stack(
+          children: [
+            Container(
+              height: size.height * 0.4,
+              decoration: BoxDecoration(color: AppColors.primary),
             ),
-          ),
-          Positioned(bottom: 64, left: 60, right: 40, child: SignInButton())
-        ],
+            Positioned(
+                top: 60,
+                left: 0,
+                right: 0,
+                child: Image.asset(
+                  AppImages.person,
+                  height: 373,
+                  width: 208,
+                )),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(AppImages.logomini),
+                  Text(
+                    "Organize seus boletos em um só lugar",
+                    style: TextStyles.titleHome,
+                    textAlign: TextAlign.center,
+                  ),
+                  SignInButton(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
