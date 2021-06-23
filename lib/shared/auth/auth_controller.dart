@@ -20,9 +20,9 @@ class AuthController {
     }
   }
 
-  Future<void> saveUser(var user) async {
+  Future<void> saveUser(UserModel user) async {
     final instance = await SharedPreferences.getInstance();
-    instance.setString("user", user);
+    instance.setString("user", user.toJSON());
     return;
   }
 
