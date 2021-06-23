@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:payflow/modules/splash/splash.dart';
 
+import 'modules/home/home_page.dart';
 import 'modules/login/login_page.dart';
 import 'shared/themes/app_colors.dart';
 
@@ -30,6 +32,11 @@ class _AppFirebaseState extends State<AppFirebase> {
                 primaryColor: AppColors.primary,
               ),
               home: LoginPage(),
+              routes: {
+                "/home": (context) => HomePage(),
+                "/login": (context) => LoginPage(),
+                "/splash": (context) => Splash(),
+              },
             );
           }
           return Material(
