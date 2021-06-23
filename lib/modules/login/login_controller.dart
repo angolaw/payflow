@@ -13,6 +13,7 @@ class LoginController {
       authController.setUser(context, response);
       print(response);
     } catch (error) {
+      authController.setUser(context, null);
       print(error);
     }
   }
