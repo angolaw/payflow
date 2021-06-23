@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/modules/home/home_page.dart';
 import 'package:payflow/modules/login/login_page.dart';
+import 'package:payflow/shared/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController {
   var _isAuthenticated = false;
-  var _user;
-  get user => _user;
+  UserModel? _user;
+  UserModel get user => _user!;
   void setUser(BuildContext context, var user) {
     if (user != null) {
       _user = user;
