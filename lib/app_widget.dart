@@ -31,7 +31,7 @@ class _AppFirebaseState extends State<AppFirebase> {
               theme: ThemeData(
                 primaryColor: AppColors.primary,
               ),
-              home: LoginPage(),
+              initialRoute: '/splash',
               routes: {
                 "/home": (context) => HomePage(),
                 "/login": (context) => LoginPage(),
