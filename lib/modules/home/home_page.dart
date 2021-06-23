@@ -3,9 +3,14 @@ import 'package:payflow/shared/auth/auth_controller.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final authController = new AuthController();
@@ -20,7 +25,7 @@ class HomePage extends StatelessWidget {
             child: ListTile(
               title: Text.rich(
                 TextSpan(
-                    text: "Olá ",
+                    text: "Olá, ",
                     style: TextStyles.titleRegular,
                     children: [
                       TextSpan(
@@ -44,6 +49,35 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Text("Home Page"),
+      ),
+      bottomNavigationBar: Container(
+        height: 90,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () {},
+                color: AppColors.primary),
+            Container(
+              height: 56,
+              width: 56,
+              decoration: BoxDecoration(
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.circular(5)),
+              child: IconButton(
+                icon: Icon(Icons.add_box_outlined),
+                onPressed: () {},
+                color: AppColors.background,
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.description_outlined),
+              onPressed: () {},
+              color: AppColors.body,
+            ),
+          ],
+        ),
       ),
     );
   }
