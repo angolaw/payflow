@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_widget.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(AppFirebase());
 }
