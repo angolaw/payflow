@@ -11,10 +11,10 @@ class AuthController {
       _user = user;
 
       _isAuthenticated = true;
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
       _isAuthenticated = false;
-      Navigator.pushNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/login');
     }
   }
 }
