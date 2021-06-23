@@ -59,16 +59,21 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.home),
                 onPressed: () {},
                 color: AppColors.primary),
-            Container(
-              height: 56,
-              width: 56,
-              decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(5)),
-              child: IconButton(
-                icon: Icon(Icons.add_box_outlined),
-                onPressed: () {},
-                color: AppColors.background,
+            GestureDetector(
+              onTap: () {
+                print("Menu");
+              },
+              child: Container(
+                height: 56,
+                width: 56,
+                decoration: BoxDecoration(
+                    color: AppColors.primary,
+                    borderRadius: BorderRadius.circular(5)),
+                child: IconButton(
+                  icon: Icon(Icons.add_box_outlined),
+                  onPressed: () {},
+                  color: AppColors.background,
+                ),
               ),
             ),
             IconButton(
