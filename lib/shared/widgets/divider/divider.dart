@@ -10,7 +10,7 @@ class CustomDivider extends StatelessWidget {
         height: 56,
         width: 1,
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: AppColors.stroke,
         ));
   }
 }
