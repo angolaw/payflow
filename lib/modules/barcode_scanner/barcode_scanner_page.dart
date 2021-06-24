@@ -64,6 +64,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
           RotatedBox(
             quarterTurns: 1,
             child: Scaffold(
+                backgroundColor: Colors.transparent,
                 appBar: AppBar(
                   backgroundColor: Colors.black,
                   centerTitle: true,
