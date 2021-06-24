@@ -29,6 +29,7 @@ class _AppFirebaseState extends State<AppFirebase> {
           if (snapshot.connectionState == ConnectionState.done) {
             return MaterialApp(
               title: 'PayFlow',
+              debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 primaryColor: AppColors.primary,
               ),

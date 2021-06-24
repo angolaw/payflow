@@ -72,6 +72,7 @@ class _HomePageState extends State<HomePage> {
                 color: AppColors.body),
             GestureDetector(
               onTap: () {
+                print("Go");
                 Navigator.pushNamed(context, '/scan');
               },
               child: Container(
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(5)),
                 child: IconButton(
                   icon: Icon(Icons.add_box_outlined),
-                  onPressed: () {},
+                  onPressed: null,
                   color: AppColors.background,
                 ),
               ),
