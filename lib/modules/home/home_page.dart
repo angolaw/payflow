@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                 color: AppColors.body),
             GestureDetector(
               onTap: () {
-                print("Menu");
+                Navigator.pushNamed(context, '/scan');
               },
               child: Container(
                 height: 56,
