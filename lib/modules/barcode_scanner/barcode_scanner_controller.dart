@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_status.dart';
 
 class BarcodeScannerController {
@@ -16,9 +17,17 @@ class BarcodeScannerController {
       final cameraController =
           CameraController(camera, ResolutionPreset.max, enableAudio: false);
       status = BarcodeScannerStatus.availableCamera(cameraController);
+      scanWithCamera();
     } catch (e) {
       status = BarcodeScannerStatus.error(e.toString());
     }
+  }
+
+  void scanWithImagePicker() async {
+    await status.cameraController!.stopImageStream();
+    final response = await ImagePicker().getImage(source: ImageSource.gallery);
+    final inputImage = InputImage.fromFilePath(response!.path);
+    scannerBarCode(inputImage);
   }
 
   void listenCamera() {
@@ -86,5 +95,16 @@ class BarcodeScannerController {
     } catch (e) {
       print("ERRO DA LEITURA $e");
     }
+  }
+
+  void scanWithCamera() {
+    Future.delayed(Duration(seconds: 10)).then((value) {
+      if (status.cameraController != null) {
+        if (status.cameraController!.value.isStreamingImages)
+          status.cameraController!.stopImageStream();
+      }
+      status = BarcodeScannerStatus.error("Timeout de leitura de boleto");
+    });
+    listenCamera();
   }
 }
