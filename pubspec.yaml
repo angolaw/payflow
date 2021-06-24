@@ -29,6 +29,7 @@ dependencies:
   google_fonts: null
   google_ml_kit: ^0.6.0
   google_sign_in: null
+  image_picker: ^0.8.0+4
   shared_preferences: null
 
 dev_dependencies:
