@@ -110,4 +110,12 @@ class BarcodeScannerController {
     });
     listenCamera();
   }
+
+  void dispose() {
+    statusNotifier.dispose();
+    barcodeScanner.close();
+    if (status.showCamera) {
+      status.cameraController!.dispose();
+    }
+  }
 }
