@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:payflow/modules/splash/splash.dart';
 
 import 'modules/barcode_scanner/barcode_scanner_page.dart';
@@ -8,6 +9,12 @@ import 'modules/login/login_page.dart';
 import 'shared/themes/app_colors.dart';
 
 class AppFirebase extends StatefulWidget {
+  AppFirebase() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
   // This widget is the root of your application.
   @override
   _AppFirebaseState createState() => _AppFirebaseState();
