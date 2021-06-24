@@ -32,6 +32,7 @@ class _AppFirebaseState extends State<AppFirebase> {
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 primaryColor: AppColors.primary,
+                primarySwatch: Colors.orange,
               ),
               initialRoute: '/splash',
               routes: {
